@@ -1,23 +1,23 @@
 package com.br.automacao.reqres.steps;
-import com.br.automacao.reqres.utils.Constantes;
 
+import com.br.automacao.reqres.utils.Constantes;
 import com.br.automacao.reqres.utils.ConstantesPath;
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.E;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
 import io.restassured.RestAssured;
-
 import io.restassured.response.Response;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public class ConsultarDadosUsuario {
+public class ConsultarListaRecursos {
+    Response response;
     Integer idUsuario;
 
     Constantes camposValores;
 
     @Autowired
-    public ConsultarDadosUsuario(Constantes camposValores){
+    public ConsultarListaRecursos(Constantes camposValores){
         this.camposValores = camposValores;
     }
 
