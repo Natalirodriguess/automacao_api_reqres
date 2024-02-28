@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class AtualizarInformacoesUsuario {
 
     Constantes camposValores;
+    Integer idUsuario;
 
     @Autowired
     public AtualizarInformacoesUsuario(Constantes camposValores){
@@ -20,6 +21,7 @@ public class AtualizarInformacoesUsuario {
 
     @Quando("consumo o endpoint de atualizar os dados desse usuario")
     public void consumoOEndpointDeAtualizarOsDadosDesseUsuario() {
+        camposValores.setResponse(RestAssured.put(ConstantesPath.baseURI + "/users/" + idUsuario ));
     }
 
     @E("e na response deve informar que os dados foram atualizados com sucesso")
